@@ -30,7 +30,7 @@ export const { loginSuccess, logout, setUser } = authSlice.actions;
 
 export const register = (userData) => async (dispatch) => {
     try {
-        const res = await axios.post('http://localhost:5000/api/users/signup', userData);
+        const res = await axios.post('https://kristaball-be.onrender.com/api/users/signup', userData);
         dispatch(loginSuccess(res.data.token));
         localStorage.setItem('token', res.data.token);
     } catch (error) {
@@ -40,14 +40,14 @@ export const register = (userData) => async (dispatch) => {
 };
 
 export const login = (credentials) => async (dispatch) => {
-    const res = await axios.post('http://localhost:5000/api/users/login', credentials);
+    const res = await axios.post('https://kristaball-be.onrender.com/api/users/login', credentials);
     dispatch(loginSuccess(res.data.token));
     localStorage.setItem('token', res.data.token);
 };
 
 export const getProfile = () => async (dispatch) => {
     try {
-        const res = await axios.get('http://localhost:5000/api/users/profile', {
+        const res = await axios.get('https://kristaball-be.onrender.com/api/users/profile', {
             headers: {
                 'x-auth-token': localStorage.getItem('token'),
             },
@@ -61,7 +61,7 @@ export const getProfile = () => async (dispatch) => {
 export const updateProfile = (profileData) => async (dispatch) => {
     try {
         console.log('Updating profile with data:', profileData); // Debugging line
-        const response = await axios.put('http://localhost:5000/api/users/profile', profileData, {
+        const response = await axios.put('https://kristaball-be.onrender.com/api/users/profile', profileData, {
             headers: {
                 'Content-Type': 'application/json',
                 'x-auth-token': localStorage.getItem('token'),
