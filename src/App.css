@@ -1,5 +1,15 @@
-.App {
+
+/* styles.css */
+body {
+  background-color: #5495f6; /* Set your desired background color here */
+  margin: 0;
+  height: 100vh;
+  
+}
+
+/* .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -35,4 +45,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
